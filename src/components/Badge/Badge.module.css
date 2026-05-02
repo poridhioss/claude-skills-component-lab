@@ -1,0 +1,21 @@
+.badge {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-body);
+  color: var(--color-bg);
+  margin-right: var(--space-sm);
+}
+
+.neutral {
+  background: var(--color-muted);
+}
+
+.success {
+  background: var(--color-success);
+}
+
+.danger {
+  background: var(--color-danger);
+}
