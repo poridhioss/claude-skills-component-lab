@@ -1,23 +1,18 @@
-# Component Gallery — Skills Lab Starter
+# claude-subagents-lab starter
 
-A small Vite + React + TypeScript project used as the starter for the Claude Code Skills lab.
+Tiny project used by Lab X2 to demonstrate Claude Code subagents.
 
-## Run
+## Layout
+
+- `src/auth.js`, a small in-memory auth module with registration, login, password verification, and token issuance. Has deliberate gaps: weak hashing (`sha1`), non-constant-time password comparison, no input length validation, no tests.
+- `src/inventory.js`, a small in-memory inventory module. Used as a secondary surface for subagents to explore.
+- `tests/`, empty. The `test-writer` subagent will populate this in the lab.
+- `package.json`, no production dependencies. Tests run with Node's built-in `node:test` runner.
+
+## Running tests
 
 ```bash
-npm install
-npm run dev
+npm test
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173`). You should see a Component Gallery with one component: `Badge`.
-
-## Structure
-
-- `src/components/` — one folder per component, plus `registry.ts` and `CHANGELOG.md`.
-- `src/styles/tokens.css` — all design tokens. Components must use these and never hardcode values.
-- `src/test/renderWithProviders.tsx` — the test helper components must use.
-- `docs/CONTRIBUTING.md` — the full conventions for adding a component.
-- `docs/component-categories.md` — the closed list of allowed categories.
-- `docs/components.md` — the components table that must be kept in sync.
-
-Read `docs/CONTRIBUTING.md` before adding any component.
+Tests live under `tests/`. Until the `test-writer` subagent runs, this will report "no tests found".
